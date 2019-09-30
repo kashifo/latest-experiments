@@ -1,14 +1,15 @@
 package com.github.latestexperiments;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.github.latestexperiments.databinding.ActivityMainBinding;
 import com.github.latestexperiments.mvvm_level1.CurrencyActivity;
+import com.github.latestexperiments.mvvm_level2.CurrencyActivity2;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         binding.btnMvvmL1.setOnClickListener(this);
+        binding.btnMvvmL2.setOnClickListener(this);
     }
 
     @Override
@@ -27,10 +29,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()){
 
-            case R.id.btnMvvmL1:
+            case R.id.btnMvvmL1: {
                 Intent intent = new Intent(this, CurrencyActivity.class);
                 startActivity(intent);
-                break;
+            }
+            break;
+
+            case R.id.btnMvvmL2: {
+                Intent intent = new Intent(this, CurrencyActivity2.class);
+                startActivity(intent);
+            }
+            break;
 
             default:;
         }

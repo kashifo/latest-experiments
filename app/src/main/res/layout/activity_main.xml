@@ -19,6 +19,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+        <Button
+            android:id="@+id/btnMvvmL2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="MVVM Level 2"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/btnMvvmL1"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnMvvmL1"
+            />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
