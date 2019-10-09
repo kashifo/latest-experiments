@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.github.latestexperiments.databinding.ActivityMainBinding;
+import com.github.latestexperiments.mvvm_kotlin.HolidaysActivity;
 import com.github.latestexperiments.mvvm_level1.CurrencyActivity;
 import com.github.latestexperiments.mvvm_level2.CurrencyActivity2;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         binding.btnMvvmL1.setOnClickListener(this);
         binding.btnMvvmL2.setOnClickListener(this);
+        binding.btnKotlinMvvm.setOnClickListener(this);
     }
 
     @Override
@@ -37,6 +39,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btnMvvmL2: {
                 Intent intent = new Intent(this, CurrencyActivity2.class);
+                startActivity(intent);
+            }
+            break;
+
+            case R.id.btn_kotlin_mvvm: {
+                Intent intent = new Intent(this, HolidaysActivity.class);
                 startActivity(intent);
             }
             break;

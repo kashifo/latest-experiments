@@ -3,6 +3,7 @@ package com.github.latestexperiments.mvvm_level2;
 import android.util.Log;
 
 import com.github.latestexperiments.ApiInterface;
+import com.github.latestexperiments.Constants;
 import com.github.latestexperiments.MyApplication;
 
 import org.json.JSONObject;
@@ -23,7 +24,6 @@ import retrofit2.Response;
 public class CurrencyRepo2 {
 
     private final String TAG = getClass().getSimpleName();
-    private final String URL = "https://api.exchangeratesapi.io/latest?base=USD";
     private ArrayList<CurrencyPojo> currencyList = new ArrayList<>();
     private MutableLiveData<List<CurrencyPojo>> mldCurrencyList = new MutableLiveData<>();
 
@@ -36,7 +36,7 @@ public class CurrencyRepo2 {
         ApiInterface apiService =
                 MyApplication.getRetrofitClient().create(ApiInterface.class);
 
-        apiService.getCurrencyList(URL).enqueue(new Callback<String>() {
+        apiService.getCurrencyList(Constants.URL_EXCHANGE_RATES).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.e(TAG, "getCurrencyList response="+response );
@@ -54,7 +54,6 @@ public class CurrencyRepo2 {
                         while (keys.hasNext()) {
                             String name = keys.next();
                             String value = rateObj.getString(name);
-                            Log.e(TAG, "name=" + name + ", value=" + value);
 
                             CurrencyPojo pojo = new CurrencyPojo();
                             pojo.setName(name);

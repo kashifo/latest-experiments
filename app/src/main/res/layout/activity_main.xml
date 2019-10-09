@@ -15,7 +15,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            android:text="MVVM Level 1"
+            android:text="MVVM Lvl 1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -26,11 +26,22 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            android:text="MVVM Level 2"
+            android:text="MVVM Lvl 2"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layout_constraintStart_toEndOf="@+id/btnMvvmL1"
             app:layout_constraintBaseline_toBaselineOf="@+id/btnMvvmL1"
             />
+
+        <Button
+            android:id="@+id/btn_kotlin_mvvm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Kotlin MVVM"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMvvmL1" />
 
         <TextView
             android:id="@+id/textView"
